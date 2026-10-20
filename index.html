@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Reserva y comparte salas de estudio, canchas y laboratorios de la Universidad de San Buenaventura Cali."
+    />
+    <meta name="theme-color" content="#141B2D" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>ReservaUSB</title>
+    <script>
+      // Aplica el tema guardado antes de pintar para evitar un destello. Claro por defecto.
+      (function () {
+        var theme = 'light';
+        try {
+          if (localStorage.getItem('reservausb-theme') === 'dark') theme = 'dark';
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript
+      >ReservaUSB necesita JavaScript para mostrar la disponibilidad de los espacios.</noscript
+    >
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

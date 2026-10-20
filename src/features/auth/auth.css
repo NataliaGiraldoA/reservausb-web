@@ -1,0 +1,106 @@
+.auth {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  min-height: calc(100vh - var(--hdr));
+}
+.auth__aside {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--on-night);
+  padding: clamp(32px, 5vw, 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.auth__aside::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--night-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--night-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(160deg, #000 20%, transparent 85%);
+  mask-image: linear-gradient(160deg, #000 20%, transparent 85%);
+}
+.auth__aside > * {
+  position: relative;
+}
+.auth__plaques {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 14px;
+  justify-content: start;
+}
+.auth__aside .plaque {
+  box-shadow: 0 0 0 1px var(--night-line);
+}
+.auth__aside h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 760;
+  max-width: 15ch;
+}
+.auth__aside p {
+  margin-top: 14px;
+  color: var(--on-night-muted);
+  max-width: 40ch;
+}
+.auth__main {
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 5vw, 64px) var(--gutter);
+}
+.auth__box {
+  width: min(100%, 440px);
+}
+.auth__box .h1 {
+  margin-bottom: 8px;
+}
+.auth__box > p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.demo {
+  margin-top: 28px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-m);
+  padding: 16px 18px;
+}
+.demo summary {
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 15px;
+}
+.demo p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 10px 0 12px;
+  line-height: 1.5;
+}
+.demo .btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (max-width: 860px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+  .auth__aside {
+    padding: 28px var(--gutter);
+    gap: 20px;
+  }
+  .auth__aside p {
+    display: none;
+  }
+  .auth__plaques .plaque {
+    width: 64px;
+    height: 48px;
+    font-size: 17px;
+  }
+}

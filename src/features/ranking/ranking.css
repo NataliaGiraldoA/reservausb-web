@@ -1,0 +1,139 @@
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+.pod {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 18px 16px;
+  border-radius: var(--r-m) var(--r-m) 0 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-bottom: 0;
+}
+.pod--1 {
+  min-height: 236px;
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--on-orange);
+}
+.pod--2 {
+  min-height: 196px;
+}
+.pod--3 {
+  min-height: 166px;
+}
+.pod .pos {
+  font-size: 56px;
+  font-weight: 790;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+.pod b {
+  display: block;
+  font-size: 17px;
+  font-weight: 680;
+  line-height: 1.2;
+}
+.pod span {
+  font-size: 14px;
+  opacity: 0.78;
+}
+.pod--me {
+  box-shadow: inset 0 0 0 3px var(--ink);
+}
+.rank {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+  overflow: hidden;
+}
+.rank li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 120px;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+}
+.rank li:first-child {
+  border-top: 0;
+}
+.rank .pos {
+  font-size: 19px;
+  font-weight: 720;
+  color: var(--muted);
+}
+.rank .nm {
+  font-weight: 600;
+}
+.rank .nm small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 450;
+}
+.rank .me {
+  background: var(--orange-soft);
+}
+.me .meter i {
+  background: var(--orange);
+}
+.bd {
+  margin-top: 16px;
+}
+.bd__h {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+}
+.bd__h b {
+  font-weight: 700;
+}
+.bd .meter {
+  margin: 7px 0 5px;
+}
+.bd small {
+  color: var(--on-night-muted);
+  font-size: 13px;
+}
+.big-idx {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.big-idx .bignum {
+  color: var(--on-night);
+}
+.big-idx span {
+  font-size: 30px;
+  font-weight: 780;
+}
+.big-idx span small {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--on-night-muted);
+}
+@media (max-width: 860px) {
+  .podium {
+    gap: 8px;
+  }
+  .pod {
+    padding: 14px 12px;
+  }
+  .pod .pos {
+    font-size: 42px;
+  }
+  .pod b {
+    font-size: 15px;
+  }
+  .rank li {
+    grid-template-columns: 30px minmax(0, 1fr) 70px;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,127 @@
+.dir {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+  overflow: hidden;
+}
+.dircols {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1.1fr) minmax(190px, 1.25fr) 172px 20px;
+  gap: 22px;
+  align-items: center;
+  padding: 0 22px;
+}
+.dirhead {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 13.5px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+  display: grid;
+}
+.dirhead span:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+}
+.dirrow {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: grid;
+  text-decoration: none;
+  border-top: 1px solid var(--line);
+  transition: background 0.12s;
+}
+.dirhead + .dirrow,
+.dirrow:first-child {
+  border-top: 0;
+}
+.dirrow:hover {
+  background: var(--surface-2);
+}
+.dirrow:focus-visible {
+  outline-offset: -3px;
+  border-radius: 0;
+}
+.dirrow h3 {
+  font-size: 17px;
+  font-weight: 660;
+  letter-spacing: -0.01em;
+}
+.dirrow .meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.dirrow .occ {
+  font-size: 15px;
+}
+.dirrow .occ b {
+  font-size: 19px;
+  font-weight: 720;
+}
+.dirrow .when {
+  display: none;
+}
+.dirrow .room {
+  display: block;
+  margin-top: 2px;
+  font-size: 13.5px;
+  font-weight: 620;
+  color: var(--green-ink);
+}
+.dirrow .room.none {
+  color: var(--muted);
+  font-weight: 500;
+}
+.dirrow .chev {
+  color: var(--muted);
+  transition:
+    transform 0.15s,
+    color 0.15s;
+}
+.dirrow:hover .chev {
+  transform: translateX(3px);
+  color: var(--ink);
+}
+.dirfoot {
+  padding: 14px 22px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-2);
+}
+@media (max-width: 860px) {
+  .dircols {
+    grid-template-columns: 64px minmax(0, 1fr) 20px;
+    gap: 6px 14px;
+    padding: 0 16px;
+  }
+  .dirhead {
+    display: none;
+  }
+  .dirrow {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .dirrow .strip-cell {
+    grid-column: 1 / -1;
+    order: 5;
+  }
+  .dirrow .chev {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .dirrow .occ {
+    grid-column: 1 / -1;
+    order: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .dirrow .room {
+    margin-top: 0;
+  }
+  .dirrow .when {
+    display: inline;
+  }
+}

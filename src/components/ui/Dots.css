@@ -1,0 +1,40 @@
+.dots {
+  --dt: var(--occ);
+  --dm: var(--orange);
+  --df: var(--green);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: transparent;
+  border: 2px dashed var(--df);
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.dot--t {
+  background: var(--dt);
+  border: 2px solid var(--dt);
+}
+.dot--m {
+  background: var(--dm);
+  border: 2px solid var(--dm);
+}
+.dots--lg {
+  gap: 10px;
+}
+.dots--lg .dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+@media (max-width: 520px) {
+  .dots--lg .dot {
+    width: 38px;
+    height: 38px;
+  }
+}

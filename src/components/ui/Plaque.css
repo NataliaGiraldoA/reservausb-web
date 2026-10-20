@@ -1,0 +1,70 @@
+/* ───────── placa de puerta ───────── */
+.plaque {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 9px;
+  font-weight: 780;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  width: 72px;
+  height: 56px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.plaque::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1.5px solid currentColor;
+  border-radius: 6px;
+  opacity: 0.28;
+  pointer-events: none;
+}
+.plaque--sala {
+  background: var(--orange-soft);
+  color: var(--orange-ink);
+}
+.plaque--cancha {
+  background: var(--green-soft);
+  color: var(--green-ink);
+}
+.plaque--lab {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+.plaque--sm {
+  width: 56px;
+  height: 44px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.plaque--sm::after {
+  inset: 3px;
+  border-radius: 5px;
+}
+.plaque--lg {
+  width: 104px;
+  height: 78px;
+  font-size: 30px;
+  border-radius: 12px;
+}
+.plaque--xl {
+  width: 164px;
+  height: 116px;
+  font-size: 52px;
+  border-radius: 16px;
+}
+.plaque--xl::after {
+  inset: 6px;
+  border-radius: 10px;
+  border-width: 2px;
+}
+@media (max-width: 520px) {
+  .plaque--xl {
+    width: 120px;
+    height: 90px;
+    font-size: 38px;
+  }
+}
